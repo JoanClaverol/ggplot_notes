@@ -534,7 +534,7 @@ ggplot(mtcars, aes(mpg)) +
   geom_histogram(aes(y = ..density..), binwidth = 1, fill = "#377EB8")
 ```
 
-### Position
+### Position {.tabset}
 
 In the previous chapter you saw that there are lots of ways to position scatter plots. Likewise, the geom_bar() and geom_histogram() geoms also have a position argument, which you can use to specify how to draw the bars of the plot.
 
@@ -579,7 +579,7 @@ ggplot(mtcars, aes(x = cyl, fill = factor(am))) +
   geom_bar(position = "dodge")
 ```
 
-### Overlapping bar plots
+### Overlapping bar plots {.tabset}
 
 So far you've seen three different positions for bar plots: stack (the default), dodge (preferred), and fill (to show proportions).
 
@@ -621,7 +621,9 @@ Overlapping histograms pose similar problems to overlapping bar plots, but there
 
 This is a geom specific to binned data that draws a line connecting the value of each bin. Like geom_histogram(), it takes a binwidth argument and by default stat = "bin" and position = "identity".
 
-#### Base plot
+#### Basic options {.tabset}
+
+##### Base plot
 
 ```{r}
 # A basic histogram, add coloring defined by cyl
@@ -629,7 +631,7 @@ ggplot(mtcars, aes(mpg, fill = factor(cyl))) +
   geom_histogram(binwidth = 1)
 ```
 
-#### Position identity
+##### Position identity
 
 ```{r}
 # Change position to identity
@@ -637,12 +639,67 @@ ggplot(mtcars, aes(mpg, fill = factor(cyl))) +
   geom_histogram(binwidth = 1, position = "identity")
 ```
 
-#### Geom_freqpoly
+##### Geom_freqpoly
 
 ```{r}
 # Change geom to freqpoly (position is identity by default)
 ggplot(mtcars, aes(mpg, color = factor(cyl))) +
   geom_freqpoly(binwidth = 1)
+```
+
+#### Advanced {.tabset}
+
+As a last example of bar plots, you'll return to histograms (which you now see are just a special type of bar plot). You saw a nice trick in a previous exercise of how to slightly overlap bars, but now you'll see how to overlap them completely. This would be nice for multiple histograms, as long as there are not too many different overlaps!
+
+You'll make a histogram using the mpg variable in the mtcars data frame.
+
+##### Base plot
+
+```{r}
+# 1 - Basic histogram plot command
+ggplot(mtcars, aes(mpg)) +
+  geom_histogram(binwidth = 1)
+```
+
+##### Add fill
+
+```{r}
+# 2 - Plot 1, Expand aesthetics: am onto fill
+ggplot(mtcars, aes(mpg, fill = factor(am))) +
+  geom_histogram(binwidth = 1)
+```
+
+##### Position "dodge"
+
+```{r}
+# 3 - Plot 2, change position = "dodge"
+ggplot(mtcars, aes(mpg, fill = factor(am))) +
+  geom_histogram(binwidth = 1, position = "dodge")
+```
+
+##### Position "fill"
+
+```{r}
+# 4 - Plot 3, change position = "fill"
+ggplot(mtcars, aes(mpg, fill = factor(am))) +
+  geom_histogram(binwidth = 1, position = "fill")
+```
+
+##### Position "identity"
+
+```{r}
+# 5 - Plot 4, plus change position = "identity" and alpha = 0.4
+ggplot(mtcars, aes(mpg, fill = factor(am))) +
+  geom_histogram(binwidth = 1, position = "identity", alpha = 0.4)
+```
+
+##### Position "idientity" + alpha
+
+```{r}
+
+# 6 - Plot 5, plus change mapping: cyl onto fill
+ggplot(mtcars, aes(mpg, fill = factor(cyl))) +
+  geom_histogram(binwidth = 1, position = "identity", alpha = 0.4)
 ```
 
 ### Barplots with color ramp
@@ -651,7 +708,9 @@ n this example of a bar plot, you'll fill each segment according to an ordinal v
 
 You'll be using the Vocab dataset from earlier. Since this is a much larger dataset with more categories, you'll also compare it to a simpler dataset, mtcars. Both datasets are ordinal.
 
-#### Brewed color palette
+#### Brewed and scale fill palette {.tabset}
+
+##### Brewed color palette
 
 ```{r}
 # Example of how to use a brewed color palette
@@ -660,7 +719,7 @@ ggplot(mtcars, aes(x = cyl, fill = factor(am))) +
   scale_fill_brewer(palette = "Set1")
 ```
 
-
+##### Scale fill palette
 
 ```{r}
 # Use str() on Vocab to check out the structure
@@ -673,6 +732,139 @@ ggplot(Vocab, aes(x = education, fill = factor(vocabulary))) +
   scale_fill_brewer()
 ```
 
+#### Other color ramp {.tabset}
+
+In the previous exercise, you ended up with an incomplete bar plot. This was because for continuous data, the default RColorBrewer palette that scale_fill_brewer() calls is "Blues". There are only 9 colours in the palette, and since you have 11 categories, your plot looked strange.
+
+In this exercise, you'll manually create a color palette that can generate all the colours you need. To do this you'll use a function called colorRampPalette().
+
+The input is a character vector of 2 or more colour values, e.g. "#FFFFFF" (white) and "#0000FF" (pure blue). (See this exercise for a discussion on hexadecimal codes).
+
+The output is itself a function! So when you assign it to an object, that object should be used as a function. To see what we mean, execute the following three lines in the console:
+
+```{r}
+new_col <- colorRampPalette(c("#FFFFFF", "#0000FF"))
+new_col(4) # the newly extrapolated colours
+munsell::plot_hex(new_col(4)) # Quick and dirty plot
+```
+
+new_col() is a function that takes one argument: the number of colours you want to extrapolate. You want to use nicer colours, so we've assigned the entire "Blues" colour palette from the RColorBrewer package to the character vector blues.
+
+##### Base plot
+
+```{r}
+# Final plot of last exercise
+ggplot(Vocab, aes(x = education, fill = factor(vocabulary))) +
+  geom_bar(position = "fill") +
+  scale_fill_brewer()
+```
+
+##### Scale_fill_manual
+
+```{r}
+# Definition of a set of blue colors
+library(RColorBrewer)
+blues <- brewer.pal(9, "Blues")
+
+# Make a color range using colorRampPalette() and the set of blues
+blue_range <- colorRampPalette(blues)
+
+# Use blue_range to adjust the color of the bars, use scale_fill_manual()
+ggplot(Vocab, aes(x = education, fill = factor(vocabulary))) +
+  geom_bar(position = "fill") +
+  scale_fill_manual(values = blue_range(11))
+```
+
+## Line plots
+
+In the video you saw how to make line plots using time series data. To explore this topic, you'll use the economics data frame, which contains time series for unemployment and population statistics from the Federal Reserve Bank of St. Louis in the US. The data is contained in the ggplot2 package.
+
+To begin with, you can look at how the median unemployment time and the unemployment rate (the number of unemployed people as a proportion of the population) change over time.
+
+In the next exercises, you'll explore to how add embellishments to the line plots, such as recession periods.
+
+### Plotting time data {.tabset}
+
+#### Base plot
+
+```{r}
+# Print out head of economics
+# head(economics)
+
+# Plot unemploy as a function of date using a line plot
+ggplot(economics, aes(x = date, y = unemploy)) +
+  geom_line()
+```
+
+#### Adjust plot 
+
+```{r}
+# Adjust plot to represent the fraction of total population that is unemployed
+ggplot(economics, aes(x = date, y = unemploy/pop)) +
+  geom_line()
+```
+
+### Periods of recession {.tabset}
+
+By themselves, time series often contain enough valuable information, but you always want to maximize the number of variables you can show in a plot. This allows you (and your viewers) to begin making comparisons between those variables that would otherwise be difficult or impossible.
+
+Here, you'll add shaded regions to the background to indicate recession periods. How do unemployment rate and recession period interact with each other?
+
+In addition to the economics dataset from before, you'll also use the recess dataset for the periods of recession. The recess data frame contains 2 variables: the begin period of the recession and the end. It's already available in your workspace.
+
+#### Base plot
+
+```{r}
+# Basic line plot
+ggplot(economics, aes(x = date, y = unemploy/pop)) +
+  geom_line()
+```
+
+#### Draw recession periods
+
+```{r}
+recess <- read.csv2("../data/recess.csv")
+names(recess) <- c("begin","end")
+recess$begin <- as.Date(recess$begin, format = c("%d/%m/%Y"))
+recess$end <- as.Date(recess$end, format = c("%d/%m/%Y"))
+
+# Expand the following command with geom_rect() to draw the recess periods
+ggplot(economics, aes(x = date, y = unemploy/pop)) +
+  geom_rect(data = recess,
+            aes(xmin = begin, xmax = end, ymin = -Inf, ymax = +Inf),
+            inherit.aes = FALSE, fill = "red", alpha = 0.2) +
+  geom_line()
+```
+
+### Multiple time series 
+
+In the data chapter we discussed how the form of your data affects how you can plot it. Here, you'll explore that topic in the context of multiple time series.
+
+The dataset you'll use contains the global capture rates of seven salmon species from 1950 - 2010.
+
+In your workspace, the following dataset is available:
+
+fish.species: Each variable (column) is a Salmon Species and each observation (row) is one Year.
+To get a multiple time series plot, however, both Year and Species should be in their own column. You need tidy data: one variable per column. Once you have that you can get the plot shown in the viewer by mapping Year to the x aesthetic and Species to the color aesthetic.
+
+You'll use the gather() function of the tidyr package, which is already loaded for you.
+
+```{r}
+fish.species <- read.csv2("../data/fish.data.csv")
+names(fish.species) <- c("Year","Pink","Chum","Sockeye","Coho","Rainbow",
+                         "Chinook","Atlantic")
+library(tidyr)
+# Use gather to go from fish.species to fish.tidy
+fish.tidy <- gather(fish.species, Species, Capture, -Year)
+```
+
+Now that you have tidy data, you're ready to make your plot! The data frame fish.tidy is already available in the workspace, so you can start right away!
+
+```{r}
+# Recreate the plot shown on the right
+ggplot(fish.tidy, aes(x = Year, y = Capture, color = Species)) +
+  geom_line()
+```
 
 # Stats and smooths
 
