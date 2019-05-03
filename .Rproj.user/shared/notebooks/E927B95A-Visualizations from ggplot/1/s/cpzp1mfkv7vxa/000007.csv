@@ -1,0 +1,3 @@
+"0","# 3 - Map wt to x, mpg to y and cyl to col"
+"0","ggplot(mtcars, aes(x = wt, y = mpg, col = as.factor(cyl))) +"
+"0","  geom_point()"

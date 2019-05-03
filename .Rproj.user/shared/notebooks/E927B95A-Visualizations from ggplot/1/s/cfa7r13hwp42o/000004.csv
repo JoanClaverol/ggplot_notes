@@ -1,0 +1,3 @@
+"0","# Basic scatter plot of wt on x-axis and mpg on y-axis; map cyl to col"
+"0","ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +"
+"0","  geom_point(size = 4)"

@@ -1,0 +1,5 @@
+"0","# 2 - Define posn_d with position_dodge()"
+"0","posn_d <- position_dodge(0.2)"
+"0","# 3 - Change the position argument to posn_d"
+"0","ggplot(mtcars, aes(x = cyl, fill = factor(am))) +"
+"0","  geom_bar(position = posn_d)"

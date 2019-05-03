@@ -1,0 +1,3 @@
+"0","# 2 - Reverse: Map cyl to x and mpg to y"
+"0","ggplot(mtcars, aes(x = cyl, y = mpg)) +"
+"0","  geom_point()"

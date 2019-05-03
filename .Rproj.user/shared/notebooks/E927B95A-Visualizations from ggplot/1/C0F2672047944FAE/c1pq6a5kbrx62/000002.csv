@@ -1,0 +1,5 @@
+"0","# Create stacked bar plot: thin.bar"
+"0","thin.bar <- ggplot(mtcars, aes(x = 1, fill = cyl)) +"
+"0","              geom_bar(width = .1) +"
+"0","              scale_x_continuous(limits = c(0.5,1.5))"
+"0","thin.bar"

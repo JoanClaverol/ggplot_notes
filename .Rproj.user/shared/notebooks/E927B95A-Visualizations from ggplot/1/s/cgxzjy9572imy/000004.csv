@@ -1,0 +1,3 @@
+"0","# 3 - Plot 2, plus MAP ..density.. to the y aesthetic (i.e. in a second aes() function)"
+"0","ggplot(mtcars, aes(mpg)) +"
+"0","  geom_histogram(aes(y = ..density..), binwidth = 1)"

@@ -1,0 +1,3 @@
+"0","# Scatter plot: carat (x), price (y), clarity (color)"
+"0","ggplot(diamonds, aes(x = carat, y = price, color = clarity)) +"
+"0","  geom_point()"

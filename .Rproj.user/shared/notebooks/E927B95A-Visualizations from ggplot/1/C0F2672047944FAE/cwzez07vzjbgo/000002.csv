@@ -1,0 +1,7 @@
+"0","# Function to save range for use in ggplot"
+"0","gg_range <- function(x) {"
+"0","  # Change x below to return the instructed values"
+"0","  data.frame(ymin = min(x), # Min"
+"0","             ymax = max(x)) # Max"
+"0","}"
+"0","gg_range(xx)"

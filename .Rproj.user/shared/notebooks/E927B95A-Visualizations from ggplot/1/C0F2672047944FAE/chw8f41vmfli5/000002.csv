@@ -1,0 +1,6 @@
+"0","# Plot 4: Mean and SD - with T-tipped error bars - fill in ___"
+"0","wt.cyl.am +"
+"0","  stat_summary(geom = ""point"", fun.y = mean,"
+"0","               position = posn.d) +"
+"0","  stat_summary(geom = ""errorbar"", fun.data = mean_sdl,"
+"0","               position = posn.d, fun.args = list(mult = 1), width = 0.1)"

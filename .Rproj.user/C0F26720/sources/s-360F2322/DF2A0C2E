@@ -1,0 +1,30 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556829373692.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2078023828",
+    "id" : "DF2A0C2E",
+    "lastKnownWriteTime" : 1556875383,
+    "last_content_update" : 1556875383826,
+    "path" : "~/UbiqumCodeAcademy/Formacio/DataCamp/ggplot/scripts/Visualizations from ggplot.Rmd",
+    "project_path" : "scripts/Visualizations from ggplot.Rmd",
+    "properties" : {
+        "cursorPosition" : "662,0",
+        "docOutlineSize" : "212",
+        "docOutlineVisible" : "1",
+        "last_setup_crc32" : "360F232252007220",
+        "scrollLine" : "646",
+        "source_window_id" : "",
+        "tempName" : "Untitled2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

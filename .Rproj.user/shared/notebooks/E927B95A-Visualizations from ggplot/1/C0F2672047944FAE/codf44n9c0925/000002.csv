@@ -1,0 +1,2 @@
+"0","# The base ggplot command; you don't have to change this"
+"0","wt.cyl.am <- ggplot(mtcars, aes(x = cyl,y = wt, col = am, fill = am, group = am))"

@@ -1,0 +1,3 @@
+"0","# Convert wide.bar to pie chart"
+"0","wide.bar +"
+"0","  coord_polar(theta = ""y"")"

@@ -1,0 +1,7 @@
+"0","# Complete basic scatter plot function"
+"0","base.plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, col = Species)) +"
+"0","               geom_jitter() +"
+"0","               geom_smooth(method = ""lm"", se = FALSE)"
+"0",""
+"0","# Plot base.plot: default aspect ratio"
+"0","base.plot"

@@ -1,0 +1,4 @@
+"0","# Solutions:"
+"0","# 1 - With geom_jitter()"
+"0","ggplot(mtcars, aes(x = cyl, y = wt)) +"
+"0","  geom_jitter()"

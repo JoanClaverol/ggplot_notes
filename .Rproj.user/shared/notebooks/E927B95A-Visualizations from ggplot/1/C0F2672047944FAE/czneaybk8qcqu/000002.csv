@@ -1,0 +1,4 @@
+"0","# Basic scatter plot"
+"0","p <- ggplot(mtcars, aes(x = wt, y = mpg)) +"
+"0","  geom_point()"
+"0","p"

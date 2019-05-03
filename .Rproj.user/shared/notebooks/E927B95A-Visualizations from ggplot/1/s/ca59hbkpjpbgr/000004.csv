@@ -1,0 +1,3 @@
+"0","# 1 - Create jittered plot of mtcars, mpg onto x, 0 onto y"
+"0","ggplot(mtcars, aes(x = mpg, y = 0)) +"
+"0","  geom_jitter()"

@@ -1,0 +1,3 @@
+"0","# Change the position argument to ""fill"""""
+"0","ggplot(mtcars, aes(x = cyl, fill = factor(am))) +"
+"0","  geom_bar(position = ""fill"")"

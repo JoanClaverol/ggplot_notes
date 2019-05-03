@@ -1,0 +1,3 @@
+"0","# Draw a bar plot of cyl, filled according to am"
+"0","ggplot(mtcars, aes(x = cyl, fill = factor(am))) +"
+"0","  geom_bar()"

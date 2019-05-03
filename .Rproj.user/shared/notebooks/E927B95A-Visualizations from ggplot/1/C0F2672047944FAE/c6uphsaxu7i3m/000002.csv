@@ -1,0 +1,4 @@
+"0","# Basic ggplot() command, coded for you"
+"0","p <- ggplot(mtcars, aes(x = wt, y = hp, col = am)) + "
+"0","  geom_point() + geom_smooth()"
+"0","p"

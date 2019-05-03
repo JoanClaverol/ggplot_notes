@@ -1,0 +1,3 @@
+"0","# 4 - plot 3, plus SET the fill attribute to ""#377EB8"""
+"0","ggplot(mtcars, aes(mpg)) +"
+"0","  geom_histogram(aes(y = ..density..), binwidth = 1, fill = ""#377EB8"")"

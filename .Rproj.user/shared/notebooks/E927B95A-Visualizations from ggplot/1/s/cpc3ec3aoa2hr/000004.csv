@@ -1,0 +1,3 @@
+"0","# Using the above plotting command, set the shape to 1"
+"0","ggplot(Vocab, aes(x = education, y = vocabulary)) +"
+"0","  geom_jitter(shape = 1)"

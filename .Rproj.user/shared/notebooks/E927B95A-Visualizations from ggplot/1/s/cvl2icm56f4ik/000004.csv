@@ -1,0 +1,3 @@
+"0","# 2 - Set width in geom_jitter()"
+"0","ggplot(mtcars, aes(x = cyl, y = wt)) +"
+"0","  geom_jitter(width = 0.1)"

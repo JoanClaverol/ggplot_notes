@@ -1,0 +1,4 @@
+"0","# The base layer, cyl.am, is available for you"
+"0","# Add geom (position = ""stack"" by default)"
+"0","cyl.am + "
+"0","  geom_bar()"

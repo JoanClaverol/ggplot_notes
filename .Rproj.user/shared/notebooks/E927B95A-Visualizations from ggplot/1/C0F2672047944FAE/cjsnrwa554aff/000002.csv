@@ -1,0 +1,3 @@
+"0","# # Plot 3: Mean and 95% CI - the easy way"
+"0","# wt.cyl.am +"
+"0","#   stat_summary(fun.data = mean_cl_normal, position = posn.d)"

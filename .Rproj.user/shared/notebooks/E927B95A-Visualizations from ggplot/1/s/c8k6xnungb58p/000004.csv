@@ -1,0 +1,4 @@
+"0","# Add mapping: (hp/wt) onto size (now 5 aesthetics):"
+"0","ggplot(mtcars, aes(x = mpg, y = qsec, col = factor(cyl), shape = factor(am), "
+"0","                   size = (hp/wt))) +"
+"0","  geom_point()"

@@ -1,0 +1,3 @@
+"0","# Plot 1: Jittered, dodged scatter plot with transparent points"
+"0","wt.cyl.am +"
+"0","  geom_point(position = posn.jd, alpha = 0.6)"

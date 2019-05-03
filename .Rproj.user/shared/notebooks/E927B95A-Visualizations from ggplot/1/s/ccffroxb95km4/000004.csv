@@ -1,0 +1,3 @@
+"0","# Add mapping: factor(am) onto shape (now 4 aesthetics):"
+"0","ggplot(mtcars, aes(x = mpg, y = qsec, col = factor(cyl), shape = factor(am))) +"
+"0","  geom_point()"

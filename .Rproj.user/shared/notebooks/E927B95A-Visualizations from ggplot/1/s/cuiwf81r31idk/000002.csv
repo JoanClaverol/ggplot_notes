@@ -1,0 +1,1 @@
+"0","cyl.am <- ggplot(mtcars, aes(x = factor(cyl), fill = factor(am)))"

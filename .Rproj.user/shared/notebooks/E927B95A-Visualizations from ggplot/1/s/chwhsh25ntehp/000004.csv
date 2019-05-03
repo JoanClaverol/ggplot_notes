@@ -1,0 +1,3 @@
+"0","# Map mpg onto x, qsec onto y and factor(cyl) onto col (3 aesthetics):"
+"0","ggplot(mtcars, aes(x = mpg, y = qsec, col = factor(cyl))) +"
+"0","  geom_point()"

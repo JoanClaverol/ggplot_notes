@@ -1,0 +1,5 @@
+"0","mtcars$cyl <- as.factor(mtcars$cyl)"
+"0",""
+"0","# 1 - Map mpg to x and cyl to y"
+"0","ggplot(mtcars, aes(x = mpg, y = cyl)) +"
+"0","  geom_point()"

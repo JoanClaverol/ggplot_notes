@@ -1,0 +1,3 @@
+"0","# 1 - Make a univariate histogram"
+"0","ggplot(mtcars, aes(mpg)) +"
+"0","  geom_histogram()"

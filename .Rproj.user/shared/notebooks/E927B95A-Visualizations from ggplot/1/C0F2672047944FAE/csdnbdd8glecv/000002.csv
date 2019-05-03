@@ -1,0 +1,4 @@
+"0","# Create a stacked bar plot: wide.bar"
+"0","wide.bar <- ggplot(mtcars, aes(x = 1, fill = cyl)) +"
+"0","              geom_bar()"
+"0","wide.bar"

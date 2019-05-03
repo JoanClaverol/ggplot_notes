@@ -1,0 +1,3 @@
+"0","# 1 - Separate rows according to transmission type, am"
+"0","p +"
+"0","  facet_grid(am ~ .)"

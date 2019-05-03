@@ -1,0 +1,3 @@
+"0","# Plot 2: Mean and SD - the easy way"
+"0","wt.cyl.am +"
+"0","  stat_summary(fun.data = mean_sdl, fun.args = list(mult = 1), position = posn.d)"

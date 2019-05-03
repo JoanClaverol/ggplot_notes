@@ -1,0 +1,3 @@
+"0","# Set the fill aesthetic; color, size and shape attributes"
+"0","ggplot(mtcars, aes(x = wt, y = mpg, fill = as.factor(cyl))) +"
+"0","  geom_point(size = 10, shape = 23, color = my_color)"

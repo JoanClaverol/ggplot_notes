@@ -1,0 +1,3 @@
+"0","# Convert thin.bar to ""ring"" type pie chart"
+"0","thin.bar +"
+"0","  coord_polar(theta = ""y"")"

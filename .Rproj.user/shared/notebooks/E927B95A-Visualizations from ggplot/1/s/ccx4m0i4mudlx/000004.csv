@@ -1,0 +1,3 @@
+"0","# Same, but set color *attribute* in geom layer "
+"0","ggplot(mtcars, aes(x = wt, y = mpg)) +"
+"0","  geom_point(color = my_color)"
